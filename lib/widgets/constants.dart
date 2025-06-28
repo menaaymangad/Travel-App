@@ -1,4 +1,4 @@
-import '../views/social_login.dart';
+import '../features/auth/presentation/pages/login_page.dart';
 import '../shared/network/local/cach_helper.dart';
 import 'components.dart';
 
@@ -9,7 +9,7 @@ void signOut(context) {
     if (value) {
       navigateAndfinish(
         context,
-        LoginScreen(),
+        LoginPage(),
       );
     }
   });

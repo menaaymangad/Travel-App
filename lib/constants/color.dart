@@ -2,10 +2,33 @@
 
 import 'package:flutter/material.dart';
 
+/// Navy color for minimalist theme
+const Color KnavyColor = Color(0xFF223A5E);
 
+/// Beige color for minimalist theme
+const Color KbeigeColor = Color(0xFFF5F5DC);
 
-// ignore: constant_identifier_names
-const MaterialAccentColor KprimaryColor = Colors.blueAccent;
+/// Primary color for the app (now navy)
+const Color KprimaryColor = KnavyColor;
+
+/// Secondary color for the app
+const Color KsecondaryColor = Color(0xff4a76a8);
+
+/// Background color for the app
+const Color KbackgroundColor = KbeigeColor;
+
+/// Text color for the app
+const Color KtextColor = KnavyColor;
+
+/// Error color for the app
+const Color KerrorColor = Color(0xffe64646);
+
+/// Success color for the app
+const Color KsuccessColor = Color(0xff4bb34b);
+
+/// Warning color for the app
+const Color KwarningColor = Color(0xffffa000);
+
 // enum
 enum ToastStates { SUCCESS, ERROR, WARNING }
 

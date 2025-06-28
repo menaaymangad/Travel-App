@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../views/social_login.dart';
+import '../features/auth/presentation/pages/login_page.dart';
 
 class responsivebutton extends StatelessWidget {
   bool isResponsive;
@@ -35,7 +35,7 @@ class responsivebutton extends StatelessWidget {
       onTap: () {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => LoginScreen()),
+          MaterialPageRoute(builder: (context) => LoginPage()),
         );
       },
     );

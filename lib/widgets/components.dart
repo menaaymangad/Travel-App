@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:travelapp/constants/color.dart';
 
-
+/// Default color for components
 const defaultColor = Colors.blue;
 
-Text GalleryText() {
+/// Creates a gallery text widget
+Text galleryText() {
   return const Text(
-    'Gallery :',
+    'Gallery:',
     style: TextStyle(
       fontWeight: FontWeight.bold,
       color: Colors.black,
@@ -16,9 +17,10 @@ Text GalleryText() {
   );
 }
 
-Text FivePlacesText() {
+/// Creates a five places text widget
+Text fivePlacesText() {
   return const Text(
-    'Five Places to expolre :',
+    'Five Places to explore:',
     style: TextStyle(
       fontWeight: FontWeight.bold,
       color: Colors.black,
@@ -27,23 +29,24 @@ Text FivePlacesText() {
   );
 }
 
-
-
-
-void navigateto(context, Widget) => Navigator.push(
+/// Navigates to a new screen
+void navigateTo(BuildContext context, Widget screen) => Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => Widget,
+        builder: (context) => screen,
       ),
     );
 
-void navigateAndfinish(context, Widget) => Navigator.pushAndRemoveUntil(
+/// Navigates to a new screen and removes all previous screens
+void navigateAndfinish(BuildContext context, Widget screen) =>
+    Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
-          builder: (context) => Widget,
-        ), (route) {
-      return false;
-    });
+          builder: (context) => screen,
+        ),
+        (route) => false);
+
+/// Shows a toast message
 void showToast({
   required String text,
   required ToastStates state,
@@ -58,8 +61,32 @@ void showToast({
       fontSize: 16.0,
     );
 
+/// Chooses the toast color based on the state
+Color chooseToastColor(ToastStates state) {
+  switch (state) {
+    case ToastStates.SUCCESS:
+      return Colors.green;
+    case ToastStates.ERROR:
+      return Colors.red;
+    case ToastStates.WARNING:
+      return Colors.amber;
+  }
+}
 
+/// Toast states
+enum ToastStates { SUCCESS, ERROR, WARNING }
 
+/// Creates a divider widget
+Widget myDivider() => Padding(
+      padding: const EdgeInsetsDirectional.only(
+        start: 20,
+      ),
+      child: Container(
+        width: double.infinity,
+        height: 1,
+        color: Colors.grey[300],
+      ),
+    );
 
 Widget buildListProduct(
   model,
@@ -155,16 +182,5 @@ Widget buildListProduct(
             ),
           ],
         ),
-      ),
-    );
-
-Widget mydivider() => Padding(
-      padding: const EdgeInsetsDirectional.only(
-        start: 20,
-      ),
-      child: Container(
-        width: double.infinity,
-        height: 1,
-        color: Colors.grey[300],
       ),
     );
